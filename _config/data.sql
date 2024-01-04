@@ -1,9 +1,9 @@
 -- Création de la table 'Utilisateurs'
 CREATE TABLE users (
-user_id INT AUTO_INCREMENT PRIMARY KEY,
+id INT AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(255) NOT NULL,
-email VARCHAR(255) NOT NULL UNIQUE,
 password VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL UNIQUE,
 reset_token VARCHAR(255),
 reset_token_expires DATETIME
 );
