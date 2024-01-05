@@ -16,7 +16,7 @@ loginform.addEventListener("submit", function (event) {
             if (data.trim() === 'valide') {
                 console.log('Login successful');
                 // Redirect to the home page or perform other actions
-                window.location.href = "index.php?page=home";
+              //  window.location.href = "index.php?page=home";
             } else {
                 console.log('Login failed');
                 // Handle failed login (e.g., display an error message)
