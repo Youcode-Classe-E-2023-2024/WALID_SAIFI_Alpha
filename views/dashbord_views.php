@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Home Dashboard</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.8.12/tailwind-experimental.min.css'>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body class="flex bg-gray-100 min-h-screen">
+
   <aside class="hidden sm:flex sm:flex-col">
     <div class="flex-grow flex flex-col justify-between text-gray-500 bg-black">
       <nav class="flex flex-col mx-4 my-6 space-y-4">
@@ -156,5 +148,3 @@
       </section>
     </main>
   </div>
-</body>
-</html>
