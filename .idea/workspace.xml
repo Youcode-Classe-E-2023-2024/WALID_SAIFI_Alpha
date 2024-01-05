@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbe038ce-da87-48ee-8d8c-2d019d0f1fcc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/login_controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/login_controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/login_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/login_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login_views.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/login_views.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
