@@ -66,7 +66,7 @@ class user
 
     static public function login($enteredPassword, $email) {
         global $db;
-        $sql_code = "SELECT * FROM user WHERE email = ?";
+        $sql_code = "SELECT * FROM users WHERE email = ?";
         $stmt = $db->prepare($sql_code);
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -92,7 +92,7 @@ class user
 
     static  public  function  getAll(){
         global $db;
-        $result = $db->query("SELECT * FROM  utilisateur");
+        $result = $db->query("SELECT * FROM  users");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     
