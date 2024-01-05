@@ -18,7 +18,7 @@ class notifications
 
     }
     static  public  function   getAll_notifications(){
-        
+
 
     }
 
