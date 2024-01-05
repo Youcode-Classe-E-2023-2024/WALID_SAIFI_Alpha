@@ -58,7 +58,7 @@ class user
     static public function registre($username, $password, $email){
         global  $db;
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO user (username, password, email) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
         $insert = $db->prepare($sql);
         $insert->bind_param("sss", $username, $hashedPassword, $email);
         $insert->execute();
