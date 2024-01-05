@@ -7,6 +7,6 @@ if (isset($_POST['submit'])) {
 
 
     user::registre($username,$password,$email);
-    header("location:index?page=login");
+    header("location:index.php?page=login");
 
 }
