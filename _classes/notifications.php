@@ -17,5 +17,9 @@ class notifications
         $this->date = $room['date'];
 
     }
+    static  public  function   getAll_notifications(){
+        
+
+    }
 
 }
