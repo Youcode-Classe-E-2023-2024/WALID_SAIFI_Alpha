@@ -1,37 +1,25 @@
-<!-- Common Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
-        <img src="./assets/pictures/chat.png" alt="Logo" style="height: 30px; width: auto;">
-        Chat Rooms
-    </a>
-</nav>
-
-<!-- Login Page -->
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="card-title text-center mb-4">Login</h2>
-                    <form id="loginForm" action="index.php?page=login" method="post">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" required>
-                        </div>
-                        <button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
-                    </form>
-                    <p class="mt-3 text-center">Don't have an account? <a href="index.php?page=register">Register</a></p>
-                </div>
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="bg-white p-8 shadow-md rounded-md w-full max-w-md bg-indigo-300">
+        <h2 class="text-3xl font-bold text-center mb-6">Login</h2>
+        <form id="loginForm" action="index.php?page=login" method="post">
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
             </div>
-        </div>
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter your password" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+            </div>
+            <button type="submit"
+                    class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">
+                Login
+            </button>
+        </form>
+        <p class="mt-4 text-center text-rose-600">Don't have an account? <a href="index.php?page=register"
+                                                                            class="text-blue-500">Register</a></p>
+        <p class="mt-2 text-center text-rose-600">Forgot your password? <a href="index.php?page=forgot-password"
+                                                                           class="text-blue-500">Reset it</a></p>
     </div>
 </div>
-
-
-</body>
-
-</html>
