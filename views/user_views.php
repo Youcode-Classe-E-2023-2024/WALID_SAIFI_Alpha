@@ -82,26 +82,30 @@
             </div>
         </header>
         <main class="p-6 sm:p-10 space-y-6">
-        <div class="container mx-auto">
-            <h1 class="text-2xl font-bold mb-4">Tableau des Utilisateurs</h1>
-
-            <table id="userTable" class="min-w-full bg-white border border-gray-300">
-                <thead>
-                    <tr>
-                        <th class="py-2 px-4 border-b">ID</th>
-                        <th class="py-2 px-4 border-b">Nom</th>
-                        <th class="py-2 px-4 border-b">Email</th>
-                        <th class="py-2 px-4 border-b">Nom d'utilisateur</th>
-                        <th class="py-2 px-4 border-b">Adresse</th>
-                        <th class="py-2 px-4 border-b">Éditer</th>
-                        <th class="py-2 px-4 border-b">Supprimer</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Les données seront ajoutées ici dynamiquement -->
-                </tbody>
-            </table>
+    <div class="container mx-auto">
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-2xl font-bold">Tableau des Utilisateurs</h1>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded">Ajouter utilisateur</button>
         </div>
-    </main>
+
+        <table id="userTable" class="min-w-full bg-white border border-gray-300">
+            <thead>
+                <tr>
+                    <th class="py-2 px-4 border-b">ID</th>
+                    <th class="py-2 px-4 border-b">Nom</th>
+                    <th class="py-2 px-4 border-b">Email</th>
+                    <th class="py-2 px-4 border-b">Nom d'utilisateur</th>
+                    <th class="py-2 px-4 border-b">Adresse</th>
+                    <th class="py-2 px-4 border-b">Éditer</th>
+                    <th class="py-2 px-4 border-b">Supprimer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les données seront ajoutées ici dynamiquement -->
+            </tbody>
+        </table>
+    </div>
+</main>
+
     </div>
 
