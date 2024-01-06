@@ -42,6 +42,37 @@ function fetchUser() {
 // Appeler la fonction fetchUser au chargement de la page
 fetchUser();
 
+/**
+ * fonction pour afficher les post de API
+ */
+function fetchPosts() {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(response => response.json())
+        .then(data => {
+            const postTable = document.getElementById('postTable');
+            const tbody = postTable.querySelector('tbody');
+
+            // Loop through the data to create table rows
+            data.forEach(post => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="py-2 px-4 border-b">${post.id}</td>
+                    <td class="py-2 px-4 border-b">${post.userId}</td>
+                    <td class="py-2 px-4 border-b">${post.title}</td>
+                    <td class="py-2 px-4 border-b">${post.body}</td>
+                    <td class="py-2 px-4 border-b">
+                        <button class="bg-blue-500 text-white py-1 px-2 rounded">Éditer</button>
+                    </td>
+                    <td class="py-2 px-4 border-b">
+                        <button class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error fetching posts:', error));
+}
+fetchPosts();
 
 
 
