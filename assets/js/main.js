@@ -1,5 +1,4 @@
 
-
 function deleteUser(userId) {
     fetch('https://jsonplaceholder.typicode.com/posts/' + userId, {
         method: 'DELETE',
@@ -20,6 +19,49 @@ function deleteUser(userId) {
             }
         })
 }
+
+
+function ajouterDonnees() {
+    var id = document.getElementById('id').value;
+    var username = document.getElementById('Username').value;
+    var adresse = document.getElementById('adresse').value;
+    document.getElementById('id').value = '';
+    document.getElementById('Username').value = '';
+    document.getElementById('adresse').value = '';
+    const formData = new FormData();
+    formData.append('id', id);
+    formData.append('username', username);
+    formData.append('adresse', adresse);
+    fetch('https://jsonplaceholder.typicode.com/users', {
+        method: 'POST',
+        body: formData,
+    })
+        .then(res => {
+            if (res.ok) {
+                console.log(res.ok);
+                return res.json();
+            } else {
+                throw new Error('Network response was not ok.');
+            }
+        })
+        .then(data => {
+            console.log(data);
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Posts added successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
+
+        })
+}
+
+
+
+
+
+
 
 function editUser(userId) {
 
@@ -137,3 +179,5 @@ loginform.addEventListener("submit", function (event) {
             // Handle errors here
         });
 });
+
+
