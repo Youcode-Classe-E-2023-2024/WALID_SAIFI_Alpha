@@ -179,4 +179,59 @@ loginform.addEventListener("submit", function (event) {
         });
 });
 
+/**graphe pour lr porcentage des post par utilisateur */
 
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+  .then(users => {
+    // Sélectionner les 10 premiers utilisateurs
+    const selectedUsers = users.slice(0, 10);
+
+    // Récupérer les données des messages (posts)
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(response => response.json())
+      .then(posts => {
+        // Filtrer les messages pour les 10 premiers utilisateurs
+        const postsForSelectedUsers = posts.filter(post => selectedUsers.some(user => user.id === post.userId));
+
+        // Calculer le nombre total de messages pour les 10 utilisateurs
+        const totalPosts = postsForSelectedUsers.length;
+
+        // Calculer le pourcentage de messages pour chaque utilisateur
+        const percentages = selectedUsers.map(user => {
+          const userPosts = postsForSelectedUsers.filter(post => post.userId === user.id);
+          const userPercentage = (userPosts.length / totalPosts) * 100;
+          return { userId: user.id, userName: user.name, percentage: userPercentage };
+        });
+
+        // Créer le graphique en cercle avec D3.js
+        const svg = d3.select('#pieChart')
+          .append('svg')
+          .attr('width', 400)
+          .attr('height', 400)
+          .append('g')
+          .attr('transform', 'translate(200,200)');
+
+        const color = d3.scaleOrdinal().range(d3.schemeCategory10);
+
+        const pie = d3.pie().value(d => d.percentage);
+        const path = d3.arc().outerRadius(200).innerRadius(0);
+
+        const arc = svg.selectAll('arc')
+          .data(pie(percentages))
+          .enter()
+          .append('g');
+
+        arc.append('path')
+          .attr('d', path)
+          .attr('fill', (d, i) => color(i));
+
+        // Ajouter les pourcentages et noms d'utilisateurs
+        arc.append('text')
+          .attr('transform', d => `translate(${path.centroid(d)})`)
+          .attr('dy', '0.35em')
+          .text(d => `${d.data.userName}: ${d.data.percentage.toFixed(2)}%`)
+          .style('text-anchor', 'middle')
+          .style('font-size', '10px');
+      });
+  });
