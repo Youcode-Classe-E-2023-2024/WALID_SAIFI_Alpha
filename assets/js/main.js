@@ -31,7 +31,6 @@ function fetchUser() {
                         <button class="bg-red-500 text-white py-1 px-2 rounded delete-button">Supprimer</button>
                     </td>
                 `;
-
                 // Ajout des écouteurs d'événements
                 const editButton = row.querySelector('.edit-button');
                 const deleteButton = row.querySelector('.delete-button');
