@@ -5,3 +5,7 @@ ByteWebster is a Professional web development and coding blog website.*/
 .group:hover .group-hover\:block {
     display: block;
 }
+
+.HIDDEN {
+    display: none;
+}
