@@ -5,7 +5,6 @@ if (isset($_POST['submit'])) {
     $password = $_POST['password'];
     $email = $_POST['email'];
 
-
     user::registre($username,$password,$email);
     header("location:index.php?page=login");
 
