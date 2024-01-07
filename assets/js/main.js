@@ -20,7 +20,6 @@ function deleteUser(userId) {
         })
 }
 
-
 function ajouterDonnees() {
     var id = document.getElementById('id').value;
     var username = document.getElementById('Username').value;
