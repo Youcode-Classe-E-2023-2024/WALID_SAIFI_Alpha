@@ -58,7 +58,45 @@ function ajouterDonnees() {
 
 
 
+function ajouterPost() {
+    const postId = document.getElementById('id').value;
+    const postTitle = document.getElementById('titre').value;
+    const postBody = document.getElementById('corps').value;
 
+    const postData = {
+        id: postId,
+        title: postTitle,
+        body: postBody,
+        userId: 1, 
+    };
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postData),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Post ajouté avec succès",
+            showConfirmButton: false,
+            timer: 1500
+        });
+     
+    })
+    s
+}
+
+// Attach the ajouterPost function to the "Ajouter" button in the post form
+document.getElementById('addpost').addEventListener('submit', function(event) {
+    event.preventDefault();
+    ajouterPost();
+});
 
 
 
