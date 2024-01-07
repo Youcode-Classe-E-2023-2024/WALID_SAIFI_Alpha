@@ -10,14 +10,24 @@ getData();
  * afficher des donner de user
  */
 
+
+
+function deleteUser(userId) {
+    
+    console.log(`Suppression de l'utilisateur avec l'ID : ${userId}`);
+}
+
+function editUser(userId) {
+
+    console.log(`Édition de l'utilisateur avec l'ID : ${userId}`);
+}
+
 function fetchUser() {
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
         .then(data => {
             const userTable = document.getElementById('userTable');
             const tbody = userTable.querySelector('tbody');
-
-            // Boucle à travers les données pour créer les lignes du tableau
             data.forEach(user => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
@@ -27,10 +37,10 @@ function fetchUser() {
                     <td class="py-2 px-4 border-b">${user.username}</td>
                     <td class="py-2 px-4 border-b">${user.address.street}, ${user.address.city}</td>
                     <td class="py-2 px-4 border-b">
-                        <button class="bg-blue-500 text-white py-1 px-2 rounded">Éditer</button>
+                        <button class="bg-blue-500 text-white py-1 px-2 rounded" onclick="editUser(user.id)" >Éditer</button>
                     </td>
                     <td class="py-2 px-4 border-b">
-                        <button class="bg-red-500 text-white py-1 px-2 rounded">Supprimer</button>
+                        <button class="bg-red-500 text-white py-1 px-2 rounded"  onclick="deleteUser(user.id)" >Supprimer</button>
                     </td>
                 `;
                 tbody.appendChild(row);
