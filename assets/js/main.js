@@ -1,8 +1,24 @@
 
 
 function deleteUser(userId) {
-
-    console.log(`Suppression de l'utilisateur avec l'ID : ${userId}`);
+    fetch('https://jsonplaceholder.typicode.com/posts/' + userId, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+        .then(res => {
+            if(res.status == 200) {
+                console.log(res.status);
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Post deleted successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        })
 }
 
 function editUser(userId) {
