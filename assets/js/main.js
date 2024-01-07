@@ -12,7 +12,7 @@ function deleteUser(userId) {
                 Swal.fire({
                     position: "center",
                     icon: "success",
-                    title: "Post deleted successfully",
+                    title: "Utilisateur supprimé avec succès",
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -49,7 +49,7 @@ function ajouterDonnees() {
             Swal.fire({
                 position: "center",
                 icon: "success",
-                title: "Posts added successfully",
+                title: "utilisatur ajouter avec success",
                 showConfirmButton: false,
                 timer: 1500
             });
