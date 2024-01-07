@@ -13,7 +13,7 @@ getData();
 
 
 function deleteUser(userId) {
-    
+
     console.log(`Suppression de l'utilisateur avec l'ID : ${userId}`);
 }
 
@@ -37,17 +37,25 @@ function fetchUser() {
                     <td class="py-2 px-4 border-b">${user.username}</td>
                     <td class="py-2 px-4 border-b">${user.address.street}, ${user.address.city}</td>
                     <td class="py-2 px-4 border-b">
-                        <button class="bg-blue-500 text-white py-1 px-2 rounded" onclick="editUser(user.id)" >Éditer</button>
+                        <button class="bg-blue-500 text-white py-1 px-2 rounded edit-button">Éditer</button>
                     </td>
                     <td class="py-2 px-4 border-b">
-                        <button class="bg-red-500 text-white py-1 px-2 rounded"  onclick="deleteUser(user.id)" >Supprimer</button>
+                        <button class="bg-red-500 text-white py-1 px-2 rounded delete-button">Supprimer</button>
                     </td>
                 `;
+
+                // Ajout des écouteurs d'événements
+                const editButton = row.querySelector('.edit-button');
+                const deleteButton = row.querySelector('.delete-button');
+
+                editButton.addEventListener('click', () => editUser(user.id));
+                deleteButton.addEventListener('click', () => deleteUser(user.id));
+
                 tbody.appendChild(row);
             });
         })
-        .catch(error => console.error('Erreur lors de la récupération des utilisateurs:', error));
 }
+
 
 // Appeler la fonction fetchUser au chargement de la page
 fetchUser();
