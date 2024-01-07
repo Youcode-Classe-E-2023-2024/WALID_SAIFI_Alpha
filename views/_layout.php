@@ -26,6 +26,7 @@
     <script src="<?= PATH ?>assets/js/main.js"></script>
     <script src="<?= PATH ?>assets/js/Graphe.js"></script>
     <script src="<?= PATH ?>assets/js/Graphexy.js"></script>
+    <script src="<?= PATH ?>assets/js/login.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-3+GrpLQ6sa02H+sgKwFfWV/Zz+FJtvbSMfO9fs/iTC6vqUOmeaLYKaFwEEXmO7Lb" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-yNeBV5I5IjOBObIFW8awM6gTPQ3JC3Y3C1g9M+K3JBWc7pc/Bp1UcF7BDmNfNdf1" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
