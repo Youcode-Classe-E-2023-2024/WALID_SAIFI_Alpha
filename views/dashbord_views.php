@@ -87,23 +87,16 @@
                     <h1 class="text-4xl font-semibold mb-2">Dashboard XENO </h1>
                 </div>
                 <div class="flex flex-wrap items-start justify-end -mb-3">
-                    <button
-                            class="inline-flex px-5 py-3 text-purple-600 hover:text-purple-700 focus:text-purple-700 hover:bg-purple-100 focus:bg-purple-100 border border-purple-600 rounded-md mb-3">
-                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                             class="flex-shrink-0 h-5 w-5 -ml-1 mt-0.5 mr-2">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                        </svg>
-                        Manage dashboard
-                    </button>
-                    <button
-                            class="inline-flex px-5 py-3 text-white bg-purple-600 hover:bg-purple-700 focus:bg-purple-700 rounded-md ml-6 mb-3">
-                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                             class="flex-shrink-0 h-6 w-6 text-white -ml-1 mr-2">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                        </svg>
-                        Create new dashboard
-                    </button>
+                   
+                <button
+  class="inline-flex px-5 py-3 text-white bg-purple-600 hover:bg-purple-700 focus:bg-purple-700 rounded-md ml-6 mb-3"
+  onclick="imprimerGraphiques()">
+  <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+       class="flex-shrink-0 h-6 w-6 text-white -ml-1 mr-2">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+  </svg>
+  Imprimer
+</button>
                 </div>
             </div>
             <section class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -116,8 +109,8 @@
                         </svg>
                     </div>
                     <div>
-                        <span class="block text-2xl font-bold">89562</span>
-                        <span class="block text-gray-500">Daily Unique Visitors</span>
+                        <span class="block text-2xl font-bold">10</span>
+                        <span class="block text-gray-500">users</span>
                     </div>
                 </div>
                 <div class="flex items-center p-8 bg-white shadow rounded-lg">
@@ -129,24 +122,11 @@
                         </svg>
                     </div>
                     <div>
-                        <span class="block text-2xl font-bold">27.6%</span>
-                        <span class="block text-gray-500">CTR</span>
+                        <span class="block text-2xl font-bold">100</span>
+                        <span class="block text-gray-500">POST</span>
                     </div>
                 </div>
-                <div class="flex items-center p-8 bg-white shadow rounded-lg">
-                    <div
-                            class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-red-600 bg-red-100 rounded-full mr-6">
-                        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
-                        </svg>
-                    </div>
-                    <div>
-                        <span class="inline-block text-2xl font-bold">3m 45s</span>
-                        <span class="inline-block text-xl text-gray-500 font-semibold">(-32%)</span>
-                        <span class="block text-gray-500">Average Engagement Time</span>
-                    </div>
-                </div>
+               
                 <div class="flex items-center p-8 bg-white shadow rounded-lg">
                     <div
                             class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-blue-600 bg-blue-100 rounded-full mr-6">
@@ -156,131 +136,22 @@
                         </svg>
                     </div>
                     <div>
-                        <span class="block text-2xl font-bold">956326</span>
-                        <span class="block text-gray-500">Event Count</span>
+                        <span class="block text-2xl font-bold">100</span>
+                        <span class="block text-gray-500">Albums</span>
                     </div>
                 </div>
             </section>
-            <section class="grid md:grid-cols-2 w-full xl:grid-cols-4 xl:grid-rows-3 xl:grid-flow-col gap-6">
+                                
+            <section class="flex w-full">
+    <div class="flex flex-col items-center p-6 pb-6 bg-white rounded-lg shadow-xl sm:p-8 flex-1" style="width: 500px">
+        <div id="pieChart" style="width: 400px; height: 400px;"></div>
+    </div>
 
+    <div class="flex flex-col items-center p-6 pb-6  bg-white rounded-lg shadow-xl sm:p-8 flex-1" style="width: 500px">
+        <div id="graphxy" style="width: 400px; height: 400px;"></div>
+    </div>
+</section>
 
-                <!--
-                  NOTES
-                  For the purpose of this demo, the heights of the bars are simply relying on native Tailwind CSS classes.
-                  In a proper implementation, where it represents real data, these height should be dynamically generated based on the data that feeds them.
-                  -->
-
-                <!-- Component Start -->
-                <div class="flex flex-col items-center p-6 pb-6 bg-white rounded-lg shadow-xl sm:p-8" style="width: 6 00px">
-                    <h2 class="text-xl font-bold">Monthly Revenue</h2>
-                    <span class="text-sm font-semibold text-gray-500">2020</span>
-                    <div class="flex items-end flex-grow w-full mt-2 space-x-2 sm:space-x-3">
-                        <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                            <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$37,500</span>
-                            <div class="relative flex justify-center w-full h-8 bg-indigo-200"></div>
-                            <div class="relative flex justify-center w-full h-6 bg-indigo-300"></div>
-                            <div class="relative flex justify-center w-full h-16 bg-indigo-400"></div>
-                            <span class="absolute bottom-0 text-xs font-bold">Jan</span>
-                        </div>
-                        <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                            <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$45,000</span>
-                            <div class="relative flex justify-center w-full h-10 bg-indigo-200"></div>
-                            <div class="relative flex justify-center w-full h-6 bg-indigo-300"></div>
-                            <div class="relative flex justify-center w-full h-20 bg-indigo-400"></div>
-                            <span class="absolute bottom-0 text-xs font-bold">Feb</span>
-                        </div>
-                        <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                            <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$47,500</span>
-                            <div class="relative flex justify-center w-full h-10 bg-indigo-200"></div>
-                            <div class="relative flex justify-center w-full h-8 bg-indigo-300"></div>
-                            <div class="relative flex justify-center w-full h-20 bg-indigo-400"></div>
-                            <span class="absolute bottom-0 text-xs font-bold">Mar</span>
-                        </div>
-                        <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                            <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$50,000</span>
-                            <div class="relative flex justify-center w-full h-10 bg-indigo-200"></div>
-                            <div class="relative flex justify-center w-full h-6 bg-indigo-300"></div>
-                            <div class="relative flex justify-center w-full h-24 bg-indigo-400"></div>
-                            <span class="absolute bottom-0 text-xs font-bold">Apr</span>
-                        </div>
-                        <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                            <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$47,500</span>
-                            <div class="relative flex justify-center w-full h-10 bg-indigo-200"></div>
-                            <div class="relative flex justify-center w-full h-8 bg-indigo-300"></div>
-                            <div class="relative flex justify-center w-full h-20 bg-indigo-400"></div>
-                            <span class="absolute bottom-0 text-xs font-bold">May</span>
-                        </div>
-                        <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                            <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$55,000</span>
-                            <div class="relative flex justify-center w-full h-12 bg-indigo-200"></div>
-                            <div class="relative flex justify-center w-full h-8 bg-indigo-300"></div>
-                            <div class="relative flex justify-center w-full h-24 bg-indigo-400"></div>
-                            <span class="absolute bottom-0 text-xs font-bold">Jun</span>
-                        </div>
-                        <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                            <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$60,000</span>
-                            <div class="relative flex justify-center w-full h-12 bg-indigo-200"></div>
-                            <div class="relative flex justify-center w-full h-16 bg-indigo-300"></div>
-                            <div class="relative flex justify-center w-full h-20 bg-indigo-400"></div>
-                            <span class="absolute bottom-0 text-xs font-bold">Jul</span>
-                        </div>
-                        <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                            <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$57,500</span>
-                            <div class="relative flex justify-center w-full h-12 bg-indigo-200"></div>
-                            <div class="relative flex justify-center w-full h-10 bg-indigo-300"></div>
-                            <div class="relative flex justify-center w-full h-24 bg-indigo-400"></div>
-                            <span class="absolute bottom-0 text-xs font-bold">Aug</span>
-                        </div>
-                        <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                            <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$67,500</span>
-                            <div class="relative flex justify-center w-full h-12 bg-indigo-200"></div>
-                            <div class="relative flex justify-center w-full h-10 bg-indigo-300"></div>
-                            <div class="relative flex justify-center w-full h-32 bg-indigo-400"></div>
-                            <span class="absolute bottom-0 text-xs font-bold">Sep</span>
-                        </div>
-                        <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                            <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$65,000</span>
-                            <div class="relative flex justify-center w-full h-12 bg-indigo-200"></div>
-                            <div class="relative flex justify-center w-full h-12 bg-indigo-300"></div>
-                            <div class="relative flex justify-center w-full bg-indigo-400 h-28"></div>
-                            <span class="absolute bottom-0 text-xs font-bold">Oct</span>
-                        </div>
-                        <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                            <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$70,000</span>
-                            <div class="relative flex justify-center w-full h-8 bg-indigo-200"></div>
-                            <div class="relative flex justify-center w-full h-8 bg-indigo-300"></div>
-                            <div class="relative flex justify-center w-full h-40 bg-indigo-400"></div>
-                            <span class="absolute bottom-0 text-xs font-bold">Nov</span>
-                        </div>
-                        <div class="relative flex flex-col items-center flex-grow pb-5 group">
-                            <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$75,000</span>
-                            <div class="relative flex justify-center w-full h-12 bg-indigo-200"></div>
-                            <div class="relative flex justify-center w-full h-8 bg-indigo-300"></div>
-                            <div class="relative flex justify-center w-full h-40 bg-indigo-400"></div>
-                            <span class="absolute bottom-0 text-xs font-bold">Dec</span>
-                        </div>
-                    </div>
-                    <div class="flex w-full mt-3">
-                        <div class="flex items-center ml-auto">
-                            <span class="block w-4 h-4 bg-indigo-400"></span>
-                            <span class="ml-1 text-xs font-medium">Existing</span>
-                        </div>
-                        <div class="flex items-center ml-4">
-                            <span class="block w-4 h-4 bg-indigo-300"></span>
-                            <span class="ml-1 text-xs font-medium">Upgrades</span>
-                        </div>
-                        <div class="flex items-center ml-4">
-                            <span class="block w-4 h-4 bg-indigo-200"></span>
-                            <span class="ml-1 text-xs font-medium">New</span>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-            </section>
         </main>
     </div>
 
