@@ -1,15 +1,3 @@
-const api = "https://jsonplaceholder.typicode.com/todos/1";
-async function getData(){
-  const  reponce = await fetch(api);
-  const data = await reponce.json();
-   console.log(data);
-}
-getData();
-
-/**
- * afficher des donner de user
- */
-
 
 
 function deleteUser(userId) {
