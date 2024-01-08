@@ -13,7 +13,7 @@ spl_autoload_register(function ($class) {
 if (isset($_GET['page']) && !empty($_GET['page'])) {
     $page = trim(strtolower($_GET['page']));
 } else {
-    $page = 'home';
+    $page = 'login';
 }
 $all_pages = scandir('controllers');
 
